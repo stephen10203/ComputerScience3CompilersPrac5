@@ -1,0 +1,13 @@
+char ** argv;
+int (*apple) [2];
+int *bull [13];
+void *cpm ();
+void (*do_it_right) ();
+char ( * ( * an_extremely_long_identifier ( ) ) [ ] ) ( );
+char ( * ( * fortran [3] ) () ) [5];
+bool goMadWithDelight;
+int * hp;
+int ibm[1981], withThePC, *the_way;
+bool Modula_2;
+int f0(char a0, int b0, bool c[]);
+void f1(char (*(*a())[])(), bool (*(*b[50])())[15]);

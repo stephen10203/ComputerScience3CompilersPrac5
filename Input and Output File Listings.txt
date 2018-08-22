@@ -1,0 +1,102 @@
+Input sample0.cpp:
+char ** argv;
+int (*daytab) [13];
+int *daytab [13];
+void *comp ();
+void (*comp) ();
+char ( * ( * x ( ) ) [ ] ) ( );
+char ( * ( * x [3] ) () ) [5];
+bool fun (int a, int j);
+int * x;
+int x [100.0];
+long * x [100];
+
+Output sample0.cpp:
+char ** argv;
+int (*daytab) [13];
+int *daytab [13];
+void *comp ();
+void (*comp) ();
+char ( * ( * x ( ) ) [ ] ) ( );
+char ( * ( * x [3] ) () ) [5];
+bool fun (int a, int j);
+int * x;
+int x [100.0]Error,rbrack expected
+
+Input sample1.cpp:
+char ** argv;
+int (*apple) [2];
+int *bull [13];
+void *cpm ();
+void (*do_it_right) ();
+char ( * ( * an_extremely_long_identifier ( ) ) [ ] ) ( );
+char ( * ( * fortran [3] ) () ) [5];
+bool goMadWithDelight;
+int * hp;
+int ibm[1981], withThePC, *the_way;
+bool Modula_2;
+int f0(char a0, int b0, bool c[]);
+void f1(char (*(*a())[])(), bool (*(*b[50])())[15]);
+
+Output sample1.cpp:
+char ** argv;
+int (*apple) [2];
+int *bull [13];
+void *cpm ();
+void (*do_it_right) ();
+char ( * ( * an_extremely_long_identifier ( ) ) [ ] ) ( );
+char ( * ( * fortran [3] ) () ) [5];
+bool goMadWithDelight;
+int * hp;
+int ibm[1981], withThePC, *the_way;
+bool Modula_2;
+int f0(char a0, int b0, bool c[]);
+void f1(char (*(*a())[])(), bool (*(*b[50])())[15]);
+
+Input sample2.cpp:
+char ** argv; /* this is a comment */
+int (*apple) [2];
+int *bull [13]; // this is another comment
+void *cpm ();   /* and here is another comment */
+void (*do_it_right) ();
+
+Output sample2.cpp:
+char ** argv; /* this is a comment */
+int (*apple) [2];
+int *bull [13]; // this is another comment
+void *cpm ();   /* and here is another comment */
+void (*do_it_right) ();
+
+Input sample3.cpp:
+char ** argv; /* this is a comment */
+int (*apple) [2];
+int *bull [13]; // this is another comment
+void *cpm; /* remember cpm - great little system! * / ();
+void (*do_it_right) ();
+
+Output sample3.cpp:
+char ** argv; /* this is a comment */
+int (*apple) [2];
+int *bull [13]; // this is another comment
+void *cpm; /* remember cpm - great little system! * / ();
+void (*do_it_right) ();
+
+Input sample4.cpp:
+void void (int a[]);
+int **a, **b*;
+int c()[100];
+int d() () ;
+int e[100]();
+int f[100](;
+int g[][100];
+int h[100][];
+int i][;
+int (*j;
+int *k);
+int f0(int *a[10], sint b[]);
+int f1(int *;);
+int f3(int (a)*);
+
+Output sample4.cpp:
+void void Error,lparen expected
+

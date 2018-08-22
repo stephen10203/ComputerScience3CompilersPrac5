@@ -1,0 +1,11 @@
+char ** argv;
+int (*daytab) [13];
+int *daytab [13];
+void *comp ();
+void (*comp) ();
+char ( * ( * x ( ) ) [ ] ) ( );
+char ( * ( * x [3] ) () ) [5];
+bool fun (int a, int j);
+int * x;
+int x [100.0];
+long * x [100];
